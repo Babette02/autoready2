@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Verkopen Zonder Gedoe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Hero -->
+  <section class="bg-white p-10 text-center shadow">
+    <h1 class="text-4xl font-bold mb-4">Verkoop je auto snel & slim</h1>
+    <p class="text-lg mb-6">Wij schoonmaken, fotograferen en adverteren jouw auto.</p>
+    <button class="bg-blue-600 text-white px-6 py-3 rounded-xl">Plan een afspraak</button>
+  </section>
+
+  <!-- Diensten -->
+  <section class="p-10 max-w-6xl mx-auto">
+    <h2 class="text-2xl font-bold text-center mb-6">Onze Diensten</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow text-center">Schoonmaak & Polijsten</div>
+      <div class="bg-white p-6 rounded-2xl shadow text-center">Professionele Fotografie</div>
+      <div class="bg-white p-6 rounded-2xl shadow text-center">Sterke Advertentie</div>
+    </div>
+  </section>
+
+  <!-- Hoe werkt het -->
+  <section class="bg-white p-10">
+    <h2 class="text-2xl font-bold text-center mb-6">Hoe werkt het?</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="p-4 text-center">1. Plan een afspraak</div>
+      <div class="p-4 text-center">2. Wij doen de rest</div>
+      <div class="p-4 text-center">3. Verkoop en verdien</div>
+    </div>
+  </section>
+
+  <!-- Chatbot -->
+  <section class="p-10 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Slim Prijsadvies</h2>
+    <div class="bg-white p-4 rounded-2xl shadow">
+      <div id="chat" class="h-40 overflow-y-auto mb-4 text-sm"></div>
+      <div class="flex gap-2">
+        <input id="input" class="border p-2 w-full rounded" placeholder="Typ hier...">
+        <button onclick="sendMessage()" class="bg-blue-600 text-white px-4 rounded">Stuur</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="text-center p-10">
+    <h2 class="text-2xl font-bold mb-4">Klaar om je auto te verkopen?</h2>
+    <button class="bg-green-600 text-white px-6 py-3 rounded-xl">Maak een afspraak</button>
+  </section>
+
+<script>
+function sendMessage() {
+  const input = document.getElementById('input');
+  const chat = document.getElementById('chat');
+
+  if (!input.value) return;
+
+  chat.innerHTML += `<div>Jij: ${input.value}</div>`;
+  chat.innerHTML += `<div>AI: Richtprijs ligt rond €8.000 - €10.000</div>`;
+
+  input.value = '';
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
+
+</body>
+</html>
+
